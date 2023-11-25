@@ -139,7 +139,7 @@ Adicional a estas, se programaron dos rutinas para la carga de la herramienta, q
 Y para la descarga fue similar a la anterior rutina pero invertida, para esto se hizo un ciclo for donde se recorría esta rutina pero de atrás para adelante. Para ver las rutinas más detalladamente, **dirigirse al matlab "CI_Trayectorias_Phantom_Lab.mlx", donde se encuentra implementado todo**.
 
 ### Espacio de trabajo
-Los puntos para la rutina del espacio de trabajo consistieron en 2 circunferencias de diferente radio parametrizadas en coordenadas polares. En este caso, se escogió el barrido en un rango de ángulo de [-60°,60\] con un radio exterior de __ y un radio interior de __. Esto se programó en matlab y la trayectoria teórica se muestra en la imagen a continuación.
+Los puntos para la rutina del espacio de trabajo consistieron en 2 circunferencias de diferente radio parametrizadas en coordenadas polares. En este caso, se escogió el barrido en un rango de ángulo de [-60°,60\] con un radio exterior de 280mm y un radio interior de 165mm. Esto se programó en matlab y la trayectoria teórica se muestra en la imagen a continuación.
 
 <p align="center">
   <img width="460" height="300" src="Imagenes/WS.png">
@@ -187,8 +187,11 @@ Los tiempos de ejecución de cada rutina se resumen en la siguiente tabla.
 
 | Rutina | Tiempo (s) |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Carga de herramienta  | Content Cell  |
+| Workspace  | Content Cell  |
+| Iniciales  | Content Cell  |
+| Figura libre  | Content Cell  |
+| Descargar herramienta  | Content Cell  |
 
 ### Calidad del trazo y comparación con valores teóricos
 

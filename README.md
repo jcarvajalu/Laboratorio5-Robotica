@@ -225,14 +225,14 @@ Se tomaron las desviaciones de el radio de curvatura y de la distancia entre pun
   <img width="460" height="300" src="Imagenes/WOdim.png">
 </p>
 
-| Trazo | Valor real (mm) | Valor del dibujo (mm) | Error relativo del trazo |
+| Trazo | Valor real (mm) | Valor del dibujo (mm) | Error relativo del trazo (%)|
 | ------------- | ------------- | ------------- | ------------- |
-| Radio interno | 165  | ------------- |
-| Radio externo | 285  | 292.05 |  |
-| Longitud RI | 242.57  | 236.14 |  |
-| Longitud RO | 482.57  | ------------- |  |
+| Radio interno | 165  | 174.12 | 5.779  |
+| Radio externo | 285  | 283.11 | 0.668 |
+| Longitud RI | 242.57  | 257.40  | 5.761 |
+| Longitud RO | 482.57  | 489.77  | 1.470 |
 
-Se observa que esta figura la hace considerablemente bien incluso cuando se repiten los trazos, se observa que al inicio de la trayectoria existe una línea atípica no programada, pero esto se debe a que cuando el marcador baja, se choca inicialmente contra el tablero y después se acomoda el gripper, por lo que este choque pequeño genera estos trazos que también se verán en otras figuras.
+Se observa que esta figura la hace considerablemente bien incluso cuando se repiten los trazos, se observa que al inicio de la trayectoria existe una línea atípica no programada, pero esto se debe a que cuando el marcador baja, se choca inicialmente contra el tablero y después se acomoda el gripper, por lo que este choque pequeño genera estos trazos que también se verán en otras figuras. El trazo con mayor error fueron los del radio interno, esto puede deberse a la posible mala inclinación que sufre el gripper al estar pegado a su base, mientras que el radio exterior lo dibujó mejor. 
 
 #### Trayectoria iniciales
 
@@ -246,18 +246,18 @@ Del mismo modo, los resultados para estos trazos son:
   <img width="460" height="300" src="Imagenes/initdim2.png">
 </p>
 
-| Trazo | Valor real (mm) | Valor del dibujo (mm) |
-| ------------- | ------------- | ------------- |
-| Trazo 1: Letra N | 165  | ------------- |
-| Trazo 2: Letra N | 285  | ------------- |
-| Trazo 3: Letra N | 242.57  | ------------- |
-| Trazo 1: Letra G | 165  | ------------- |
-| Trazo 2: Letra G | 285  | ------------- |
-| Trazo 3: Letra G | 242.57  | ------------- |
-| Trazo 4: Letra G | 242.57  | ------------- |
-| Trazo 5: Letra G | 242.57  | ------------- |
+| Trazo | Valor real (mm) | Valor del dibujo (mm) | Error relativo del trazo (%)|
+| ------------- | ------------- | ------------- | ------------- |
+| Trazo 1: Letra N | 50  | 46.76 |  6.92 |
+| Trazo 2: Letra N | 61.03  | 63.64 | 4.1 |
+| Trazo 3: Letra N | 50  | 48.60 | 2.88 |
+| Trazo 1: Letra G | 50  | 54.24 | 7.8171 |
+| Trazo 2: Letra G | 50  | 46.21 | 8.201 |
+| Trazo 3: Letra G | 50  | 48.37 | 3.369 |
+| Trazo 4: Letra G | 25  | 21.64 | 15.52 |
+| Trazo 5: Letra G | 25  | 27.2 | 8.02 |
 
-Se observa que la letra G la hace mejor que la letra N, aquí ocurre el mismo fenómeno, que el primer trazo debe corregir la trayectoria desde el punto de inicio, por lo que es el trazo más deficiente. Sin embargo, se logra corregir esto y la letra G se dibuja de una mejor manera. Otra cosa a atribuir es que el marcador pudo haberse movido un poco debido a la escritura o choques con el tablero, lo cual genera inexactitudes en los trazos dibujados.
+Se observa que la letra G la hace mejor que la letra N, aquí ocurre el mismo fenómeno, que el primer trazo debe corregir la trayectoria desde el punto de inicio, dimensionalmente se observa que la letra es similar, pero no coinciden en la posición como tal. La letra G se dibuja de una mejor manera en el sentido que se encuentra mejor en su posición, pero se observa una gran desviación en el trazo 4 y trazo 5, que son los trazos más cortos, esto puede deberse a posibles efectos circunstanciales como el desajuste del marcador en este punto debido a que la punta no es plana, a la transición entre trazos, insuficiencia de puntos, entre otros. Otra cosa a atribuir es que el marcador pudo haberse movido un poco debido a la escritura o choques con el tablero, lo cual genera inexactitudes en los trazos dibujados.
 
 #### Trayectoria figura libre
 
@@ -267,10 +267,15 @@ Ahora, para la figura libre se tiene:
   <img width="460" height="300" src="Imagenes/digRes.png">
 </p>
 
-| Trazo | Valor real (mm) | Valor del dibujo (mm) |
-| ------------- | ------------- | ------------- |
-| Trazo 1: Ojo 1 | 165  | ------------- |
-| Trazo 2: Ojo 2 | 285  | ------------- |
-| Trazo 3: Radio boca | 242.57  | ------------- |
-| Trazo 1: Diámetro cara | 165  | ------------- |
+En este caso, dado que la circunferencia dibujada difería por el análisis de repetitividad, el software implementado en OpenCV no lograba definir una circunferencia representativa de estos dibujos, como alternativa, se comparó con 3 puntos de mayor desviación al diámetro de la cara, obteniendo así los siguientes resultados.
 
+| Trazo | Valor real (mm) | Valor del dibujo (mm) | Error relativo del trazo (%)|
+| ------------- | ------------- | ------------- | ------------- |
+| Trazo 1: Ojo 1 | 40  | 46.06 | 13.15 |
+| Trazo 2: Ojo 2 | 30 | 45.31 | 33.78 |
+| Trazo 3: Radio boca | 20  | 17.19 | 16.34 |
+| Trazo 1.1: Diámetro cara (d=7.82)|  40 | 47.82 | 16.35 |
+| Trazo 1.2: Diámetro cara (d=7.32)| 40  | 47.32 | 15.469 |
+| Trazo 1.3: Diámetro cara (d=9.29)| 40  | 49.29 | 17.84 |
+
+Se observa sin dudas que esta figura es la que mayores desviaciones de su trayectoria presentó, la principal razón que se discutió es que dado que es la última rutina que se ejecuta, es en la que el marcador se encuentra más desplazado o desviado debido a los anteriores trazos (fricción por estos), golpes acumulados al bajar al tablero para dibujar, en general, mayor acumulación de perturbaciones en el gripper que pudieron haber movido el marcador indeseablemente. Adicionalmente, se observa que la circunferencia dibujada podría mejorarse añadiendo más puntos de dibujo o incluso haciendo una interpolación diferente para la cinemática inversa del cálculo de estos perfiles de posición de los servos del robot.

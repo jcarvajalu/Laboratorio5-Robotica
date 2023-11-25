@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 def umbralizar_imagen(imagen, umbral):
-    _, imagen_umbralizada = cv2.threshold(imagen, umbral, 255, cv2.THRESH_BINARY)
+    _, imagen_umbralizada = cv2.threshold(imagen, umbral, 225, cv2.THRESH_BINARY)
     return imagen_umbralizada
 
 def ajustar_imagenes(imagen1, imagen2):

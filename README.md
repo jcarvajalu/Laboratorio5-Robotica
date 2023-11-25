@@ -171,13 +171,23 @@ _________ Gay
 
 Los resultados de esto se pueden ver en los 2 siguientes videos. El siguiente video muestra la implementación de todas las rutinas.
 
-________ Video 1
+<p align="center">
+  <img width="460" height="300" src="Imagenes/WS.png">
+</p>
+Video 1
 
-Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video.
+Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video. Además, en este video se muestra una parte del análisis de repetitividad de trazos, donde se muestra el tablero ya con los trazos y la repetición de algunas rutinas. No se muestra todo el análisis puesto que el video quedaría muy extenso.
 
-________ Video 2
+<p align="center">
+  <img width="460" height="300" src="Imagenes/WS.png">
+</p>
+Video 2
 
-Se observa que se implementaron todos los requerimientos en la interfaz gráfica y se realiza la secuencia de rutinas solicitada.
+Se observa que se implementaron todos los requerimientos en la interfaz gráfica y se realiza la secuencia de rutinas solicitada. El resultado de los trazos repetidos se muestra en la siguiente imagen. Se hizo una corrección de perspectiva dado que la superficie del tablero debe quedar lo más perpendicular a la cámara para que se tengan los resultados más reales.
+
+<p align="center">
+  <img width="460" height="300" src="Imagenes/results.png">
+</p>
 
 ## Análisis de resultados
 
@@ -195,7 +205,21 @@ Los tiempos de ejecución de cada rutina se resumen en la siguiente tabla.
 
 ### Calidad del trazo y comparación con valores teóricos
 
+Ahora, se comparará cada trazo de cada rutina respecto al valor real, se tomará la desviación máxima y la desviación mínima de cada trazo identificado por computadora. La imagen a continuación muestra la comparación de esto.
+
+<p align="center">
+  <img width="460" height="300" src= "Imagenes/results2.png">
+</p>
+
 #### Trayectoria del workspace
 
+<p align="center">
+  <img width="460" height="300" src= "Imagenes/WSR.png">
+</p>
 
+Las desviaciones máximas y mínimas se muestran en la siguiente tabla.
+
+| D_máx (mm) | D_mín (mm) |
+| ------------- | ------------- |
+| Carga de herramienta  | Content Cell  |
 

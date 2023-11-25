@@ -6,8 +6,16 @@ def umbralizar_imagen(imagen, umbral):
     return imagen_umbralizada
 
 def ajustar_imagenes(imagen1, imagen2):
-    # Implementa el código para ajustar las imágenes según el patrón de calibración
-    # Aquí asumimos que las imágenes ya están ajustadas y no realizamos ningún reescalamiento.
+    # Reescalar imágenes
+    imagen1_reescalada = reescalar_imagen(imagen1, escala)
+    imagen2_reescalada = reescalar_imagen(imagen2, escala)
+
+    # Aplicar traslación para matching 
+    filas, columnas = imagen1_reescalada.shape[:2]
+    M = np.float32([[1, 0, traslacion], [0, 1, 0]])
+    imagen1_ajustada = cv2.warpAffine(imagen1_reescalada, M, (columnas, filas))
+    imagen2_ajustada = cv2.warpAffine(imagen2_reescalada, M, (columnas, filas))
+
 
     return imagen1, imagen2
 

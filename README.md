@@ -43,6 +43,10 @@ donde $a_x$, $a_y$ y $a_z$ son las componentes del vector de aproximación en el
 #### Mecanismo 2R
 Con todas estas simplificaciones realizadas, el problema de la cinemática inversa del robot se reduce a un mecanismo 2R. Este mecanismo tiene dos soluciones posibles: con el codo hacia arriba y con el codo hacia abajo.
 
+<p align="center">
+  <img width="460" height="300" src="Imagenes/CI.png">
+</p>
+
 ```math
 \begin{gather*}
     r = \sqrt{x_w^2+y_w^2}\\
@@ -104,7 +108,13 @@ Donde esta parametrización está determinada por los valores de las dos articul
 
 Con el fin de fijar la posición del marcador en el espacio de trabajo para su carga y descarga, y para asegurar el agarre en el gripper cuando dibuje, se diseñaron dos piezas, una para sostener la herramienta con el gripper, y otra para sostener el marcador en el tablero. A continuación se muestran imágenes de este par de herramientas.
 
-____________________
+<p align="center">
+  <img width="460" height="300" src="Imagenes/portaherramienta.png">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="Imagenes/gripper.png">
+</p>
 
 ## Rutinas programadas
 
@@ -131,9 +141,9 @@ Y para la descarga fue similar a la anterior rutina pero invertida, para esto se
 ### Espacio de trabajo
 Los puntos para la rutina del espacio de trabajo consistieron en 2 circunferencias de diferente radio parametrizadas en coordenadas polares. En este caso, se escogió el barrido en un rango de ángulo de [-60°,60\] con un radio exterior de __ y un radio interior de __. Esto se programó en matlab y la trayectoria teórica se muestra en la imagen a continuación.
 
-
-
-__________
+<p align="center">
+  <img width="460" height="300" src="Imagenes/WS.png">
+</p>
 
 Se implementó una función para generar los puntos en matlab, luego, a través de un bucle for se realizó la cinemática inversa de cada punto.
 
@@ -141,13 +151,17 @@ Se implementó una función para generar los puntos en matlab, luego, a través 
 
 Se hicieron los trazos para la letra N y G, como adición, se aplicó una matriz de rotación para la letra G. Se hizo usando trazos rectos. De igual manera, tras generar los trazos se realizó la cinemática inversa de cada punto y se guardó todas las posiciones en un único vector. La imagen a continuación muestra las letras.
 
-__________
+<p align="center">
+  <img width="460" height="300" src="Imagenes/iniciales.png">
+</p>
 
 ### Figura libre
 
 Se programaron los trazos para dibujar una carita feliz, como los demás casos, tras generar los puntos se hizo un for para obtener los valores de las articulaciones usando la cinemática inversa. La figura se muestra en la imagen a continuación.
 
-___________
+<p align="center">
+  <img width="460" height="300" src="Imagenes/figurita.png">
+</p>
 
 ## Envío de rutinas al robot con el script de Python y creación de la interfaz.
 
@@ -162,6 +176,8 @@ ________ Video 1
 Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video.
 
 ________ Video 2
+
+Se observa que se implementaron todos los requerimientos en la interfaz gráfica y se realiza la secuencia de rutinas solicitada.
 
 ## Análisis de resultados
 

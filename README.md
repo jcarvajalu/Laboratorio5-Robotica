@@ -116,6 +116,8 @@ Con el fin de fijar la posición del marcador en el espacio de trabajo para su c
   <img width="460" height="300" src="Imagenes/gripper.png">
 </p>
 
+Se observa que toma la forma del gripper para tener mejor sujeción y para que se vea con más estilo.
+
 ## Rutinas programadas
 
 Las rutinas programadas para dibujar seguían la siguiente secuencia:
@@ -303,4 +305,10 @@ El código implementado se encuentra anexo en el repositorio. Los resultados de 
 | Iniciales | 0.69851 | 
 | Figura libre | 0.615689  |
 
-Se observa que los trazos que mejor matching espacial tienen son los del workspace, esto se puede observar también a simple vista, adicionalmente, este valor también demuestra que este trazo tiene una alta repetitividad, puesto que a pesar de haberlo trazado 5 veces tiene el mayor valor IoU. Una justificación adecuada de esto puede ser el hecho de que para este trazo únicamente se depende de la articulación q1, ya que es simplemente una circunferencia sobre el plano, las demás articulaciones permanecen inmóviles, esto hace que se reduzca la facilidad de trazos falsos o trazos inadecuados. Por otro lado, se observa que las otras dos rutinas poseen un IoU inferior, se observa también que la figura libre es la que menor matching tiene con 0.6156, esto también se debe a lo que se mencionaba anteriormente sobre el número de puntos y el número de perturbaciones acumuladas. Siguiendo esta tendencia, la rutina para las iniciales es el valor "intermedio" de las 3 con 0.69851, sin embargo, se observa visualmente que la letra N tiene más dificultades que la letra G, esto puede deberse a posibles efectos circunstanciales como desniveles u otras causas.
+Se observa que los trazos que mejor matching espacial tienen son los del workspace, esto se puede observar también a simple vista, adicionalmente, este valor también demuestra que este trazo tiene una alta repetitividad, puesto que a pesar de haberlo trazado 5 veces tiene el mayor valor IoU. Una justificación adecuada de esto puede ser el hecho de que para este trazo únicamente se depende de la articulación q1, ya que es simplemente una circunferencia sobre el plano, las demás articulaciones permanecen inmóviles, esto hace que se reduzca la facilidad de trazos falsos o trazos inadecuados. Por otro lado, se observa que las otras dos rutinas poseen un IoU inferior, se observa también que la figura libre es la que menor matching tiene con 0.6156, esto también se debe a lo que se mencionaba anteriormente sobre el número de puntos y el número de perturbaciones acumuladas. Siguiendo esta tendencia, la rutina para las iniciales es el valor "intermedio" de las 3 con 0.69851, sin embargo, se observa visualmente que la letra N tiene más dificultades que la letra G, esto puede deberse a posibles efectos circunstanciales como desniveles u otras causas. También se debe a que los tornillos no estaban completos lo que generaba vibraciones en la base del robot, como se explicaba en los videos.
+
+### Conclusiones
+
+* Se deberían cambiar los tipos de interpolación en la generación de trayectorias para mejorar la calidad de los trazos, además, se podría probar usando distintos números de puntos.
+* Se observa que el orden en que se dibujan los trazos afectan la calidad de estos, ya que los trazos previos y las colisiones con el tablero al bajar mueven el marcador y generan pérdidas de exactitud
+* Se recomienda para futuras prácticas mejorar la robustez mecánica, apretando tornillos y verificando que no esté desalineado el robot.

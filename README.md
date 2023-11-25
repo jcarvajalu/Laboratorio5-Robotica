@@ -203,7 +203,7 @@ Los tiempos de ejecución de cada rutina se resumen en la siguiente tabla.
 | Figura libre  | Content Cell  |
 | Descargar herramienta  | Content Cell  |
 
-### Calidad del trazo y comparación con valores teóricos
+### Calidad del trazo y verificación dimensional de las figuras dibujadas
 
 Ahora, se comparará cada trazo de cada rutina respecto al valor real, se tomará la desviación de os trazos generados en las rutinas identificado por computadora. La imagen a continuación muestra la comparación de esto.
 
@@ -279,3 +279,28 @@ En este caso, dado que la circunferencia dibujada difería por el análisis de r
 | Trazo 4.3: Diámetro cara (d=9.29)| 40  | 49.29 | 17.84 |
 
 Se observa sin dudas que esta figura es la que mayores desviaciones de su trayectoria presentó, la principal razón que se discutió es que dado que es la última rutina que se ejecuta, es en la que el marcador se encuentra más desplazado o desviado debido a los anteriores trazos (fricción por estos), golpes acumulados al bajar al tablero para dibujar, en general, mayor acumulación de perturbaciones en el gripper que pudieron haber movido el marcador indeseablemente. Adicionalmente, se observa que la circunferencia dibujada podría mejorarse añadiendo más puntos de dibujo o incluso haciendo una interpolación diferente para la cinemática inversa del cálculo de estos perfiles de posición de los servos del robot.
+
+### Exactitud de los trazos
+
+Habiendo verificado las dimensiones de los trazos y analizados esos resultados, se procede a evaluar la exactitud del trazo como tal, es decir, qué tan cerca o lejos están las posiciones de los trazos dibujados respecto a los teóricos, para esto se utiliza la métrica intersección sobre unión (IoU) usada en el procesamiento de imágenes y en redes neuronales. Intersección sobre unión tiene el siguiente algoritmo:
+
+* 1. Umbralización de las imágenes a comparar: Las imágenes de entrada son umbralizadas para que sus valores sean o blanco o negro.
+* 2. Reescalamiento o preprocesamiento para ajustar ambas imágenes: Se ajustan las imágenes con el patrón de calibración de cámara y de punto inicial para sobreponerlas, en este punto, no importa que se alteren las dimensiones de los trazos, únicamente se requiere coincidir las imágenes en un punto y una orientación según la calibración, se escoge como punto inicial el punto más a la izquierda (primer punto del workspace).
+* 3. Cálculo de intersección: Ajustadas las imágenes, se calcula el número de bits que están en intersección de ambas imágenes, esto corresponde al un valor representativo de qué tantos bits de imágenes se corresponden entre los trazos teóricos vs los reales. Para esto se hace uso de la función _cv2.bitwise_and_ (una función and A&B) implementada en la librería usada.
+* 4. Cálculo de unión: Sabiendo el número de bits que se corresponden, ahora se debe saber el número de bits totales de la imagen para tener la referencia, esto se hace usando la función _cv2.bitwise_or_, que calcula el número de bits totales entre ambas imágenes sin incluir los bits intersectados.
+* 5. Aplicación del algoritmo: Se aplica el algoritmo:
+
+
+\[ IoU = \frac{\text{Área de Intersección}}{\text{Área de Unión}} \]
+
+La puntuación de IoU varía de 0 a 1, donde 0 indica ninguna superposición y 1 indica una superposición completa. Esta métrica es crucial para evaluar la calidad de las predicciones en tareas de matching.
+
+El código implementado se encuentra anexo en el repositorio. Los resultados de cada rutina se muestran en la siguiente tabla.
+
+| Trazo | Valor IoU |
+| ------------- | ------------- |
+| Workspace | 0.8489  | 
+| Iniciales | 0.69851 | 
+| Figura libre | 0.615689  |
+
+Se observa que los trazos que mejor matching espacial tienen son los del workspace, esto se puede observar también a simple vista, adicionalmente, este valor también demuestra que este trazo tiene una alta repetitividad, puesto que a pesar de haberlo trazado 5 veces tiene el mayor valor IoU. Una justificación adecuada de esto puede ser el hecho de que para este trazo únicamente se depende de la articulación q1, ya que es simplemente una circunferencia sobre el plano, las demás articulaciones permanecen inmóviles, esto hace que se reduzca la facilidad de trazos falsos o trazos inadecuados. Por otro lado, se observa que las otras dos rutinas poseen un IoU inferior, se observa también que la figura libre es la que menor matching tiene con 0.6156, esto también se debe a lo que se mencionaba anteriormente sobre el número de puntos y el número de perturbaciones acumuladas. Siguiendo esta tendencia, la rutina para las iniciales es el valor "intermedio" de las 3 con 0.69851, sin embargo, se observa visualmente que la letra N tiene más dificultades que la letra G, esto puede deberse a posibles efectos circunstanciales como desniveles u otras causas.

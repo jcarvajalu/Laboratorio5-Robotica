@@ -211,13 +211,9 @@ Ahora, se comparará cada trazo de cada rutina respecto al valor real, se tomar�
   <img width="460" height="300" src= "Imagenes/results2.png">
 </p>
 
-A través de la librería OpenCV en Python, las imágenes fueron comparadas usando el patrón de calibración de la cámara del celular, exportando las imágenes calibradas, en inventor se dispuso a hacer las cotas para la verificación dimensional generando los siguientes resultados.
+A través de la librería OpenCV en Python, las imágenes fueron comparadas usando el patrón de calibración de la cámara del celular, exportando las imágenes calibradas teniendo en cuenta que el trazo rojo es producto de una operación dilatación usando _cv2.dilate_, y se segmentó este trazo, luego, se umbralizó la imagen del tablero tomada con la cámara usando _cv2.threshold_ utilizando un umbral de 225, se segmentó también y calibrando esta imagen y sumándolas se obtuvo la intersección de las dos imágenes. Tras esto, se dispuso a hacer las cotas para la verificación dimensional generando los siguientes resultados.
 
 #### Trayectoria del workspace
-
-<p align="center">
-  <img width="460" height="300" src= "Imagenes/WR.png">
-</p>
 
 Se tomaron las desviaciones de el radio de curvatura y de la distancia entre punto de inicio y final. Los resultados se muestran en la siguiente tabla.
 

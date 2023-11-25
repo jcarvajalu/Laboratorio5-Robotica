@@ -66,30 +66,24 @@ Para definir las soluciones con el codo hacia arriba y hacia abajo, se utilizan 
 Por convenciencia, para este laboratorio se selecciona la solución codo arriba del modelo, entonces:
 
 ```math
-
-    $\mathbf{q_2}$  = $\frac{\pi}{2}-\beta-\alpha-\gamma$
-    $\mathbf{q_3}$ =           $\pi-\psi-\phi$  
-
+    \mathbf{q_2}  = \frac{\pi}{2}-\beta-\alpha-\gamma \\
+    \mathbf{q_3} =           \pi-\psi-\phi  
 ```
 Desarrollando estas ecuaciones se tendría que:
 
-
 ```math
-     \theta_2=-2 atan((2 D_r L_2 - \sqrt{- D_r^4 - 2 D_r^2 D_z^2 + 2 D_r^2 L_2^2 + 2 D_r^2 L_3^2 - D_z^4 + 2 D_z^2 L_2^2 + 2 D_z^2 L_3^2 - L_2^4 + 2 L_2^2 L_3^2 - L_3^4})/(D_r^2 + D_z^2 + 2 D_z L_2 + L_2^2 - L_3^2))
-```
-
-```math
-    \theta_3=-2atan((\sqrt{(- D_r^2 - D_z^2 + L_2^2 + 2 L_2 L_3 + L_3^2)(D_r^2 + D_z^2 - L_2^2 + 2L_2L_3 - L_3^2)} - 2L_2L_3)/(D_r^2 + D_z^2 - L_2^2 - L_3^2))
+\begin{align*}
+    \theta_2 &= -2 \arctan\left(\frac{2D_rL_2 - \sqrt{-D_r^4 - 2D_r^2D_z^2 + 2D_r^2L_2^2 + 2D_r^2L_3^2 - D_z^4 + 2D_z^2L_2^2 + 2D_z^2L_3^2 - L_2^4 + 2L_2^2L_3^2 - L_3^4}}{D_r^2 + D_z^2 + 2D_zL_2 + L_2^2 - L_3^2}\right)\\
+    \theta_3 &= -2 \arctan\left(\frac{\sqrt{(-D_r^2 - D_z^2 + L_2^2 + 2L_2L_3 + L_3^2)(D_r^2 + D_z^2 - L_2^2 + 2L_2L_3 - L_3^2)} - 2L_2L_3}{D_r^2 + D_z^2 - L_2^2 - L_3^2}\right)
+\end{align*}
 ```
 
 Donde:
 
 ```math
 \begin{align}
-r=\sqrt{P_x^2+P_y^2}\\
-    D_r=r-L_4 cos(\beta)\\
-    D_z=P_z-L_4 sin(\beta)-L_1\\
-
+    D_r=\sqrt{P_x^2+P_y^2}-L_4 cos(\beta): Distancia r (radial de los dos eslabones)\\
+    D_z=P_z-L_4 sin(\beta)-L_1: Distancia en Z de los dos eslabones\\
 \end{align}
 ```
 
@@ -132,7 +126,7 @@ Adicional a estas, se programaron dos rutinas para la carga de la herramienta, q
 * Alejamiento en el eje z hacia arriba para sacar el marcador del portaherramienta.
 * Regreso a home.
 
-Y para la descarga fue similar a la anterior rutina pero invertida, para esto se hizo un ciclo for donde se recorría esta rutina pero de atrás para adelante.
+Y para la descarga fue similar a la anterior rutina pero invertida, para esto se hizo un ciclo for donde se recorría esta rutina pero de atrás para adelante. Para ver las rutinas más detalladamente, **dirigirse al matlab "CI_Trayectorias_Phantom_Lab.mlx", donde se encuentra implementado todo**.
 
 ### Espacio de trabajo
 Los puntos para la rutina del espacio de trabajo consistieron en 2 circunferencias de diferente radio parametrizadas en coordenadas polares. En este caso, se escogió el barrido en un rango de ángulo de [-60°,60\] con un radio exterior de __ y un radio interior de __. Esto se programó en matlab y la trayectoria teórica se muestra en la imagen a continuación.
@@ -154,3 +148,35 @@ __________
 Se programaron los trazos para dibujar una carita feliz, como los demás casos, tras generar los puntos se hizo un for para obtener los valores de las articulaciones usando la cinemática inversa. La figura se muestra en la imagen a continuación.
 
 ___________
+
+## Envío de rutinas al robot con el script de Python y creación de la interfaz.
+
+_________ Gay
+
+## Resultados
+
+Los resultados de esto se pueden ver en los 2 siguientes videos. El siguiente video muestra la implementación de todas las rutinas.
+
+________ Video 1
+
+Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video.
+
+________ Video 2
+
+## Análisis de resultados
+
+### Tiempos de ejecución
+
+Los tiempos de ejecución de cada rutina se resumen en la siguiente tabla.
+
+| Rutina | Tiempo (s) |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+### Calidad del trazo y comparación con valores teóricos
+
+#### Trayectoria del workspace
+
+
+

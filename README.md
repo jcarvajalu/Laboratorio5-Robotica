@@ -205,21 +205,76 @@ Los tiempos de ejecución de cada rutina se resumen en la siguiente tabla.
 
 ### Calidad del trazo y comparación con valores teóricos
 
-Ahora, se comparará cada trazo de cada rutina respecto al valor real, se tomará la desviación máxima y la desviación mínima de cada trazo identificado por computadora. La imagen a continuación muestra la comparación de esto.
+Ahora, se comparará cada trazo de cada rutina respecto al valor real, se tomará la desviación de os trazos generados en las rutinas identificado por computadora. La imagen a continuación muestra la comparación de esto.
 
 <p align="center">
   <img width="460" height="300" src= "Imagenes/results2.png">
 </p>
 
+A través de la librería OpenCV en Python, las imágenes fueron comparadas usando el patrón de calibración de la cámara del celular, exportando las imágenes calibradas, en inventor se dispuso a hacer las cotas para la verificación dimensional generando los siguientes resultados.
+
 #### Trayectoria del workspace
 
 <p align="center">
-  <img width="460" height="300" src= "Imagenes/WSR.png">
+  <img width="460" height="300" src= "Imagenes/WR.png">
 </p>
 
-Las desviaciones máximas y mínimas se muestran en la siguiente tabla.
+Se tomaron las desviaciones de el radio de curvatura y de la distancia entre punto de inicio y final. Los resultados se muestran en la siguiente tabla.
 
-| D_máx (mm) | D_mín (mm) |
-| ------------- | ------------- |
-| Carga de herramienta  | Content Cell  |
+<p align="center">
+  <img width="460" height="300" src="Imagenes/WIdim.png">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="Imagenes/WOdim.png">
+</p>
+
+| Trazo | Valor real (mm) | Valor del dibujo (mm) | Error relativo del trazo |
+| ------------- | ------------- | ------------- | ------------- |
+| Radio interno | 165  | ------------- |
+| Radio externo | 285  | 292.05 |  |
+| Longitud RI | 242.57  | 236.14 |  |
+| Longitud RO | 482.57  | ------------- |  |
+
+Se observa que esta figura la hace considerablemente bien incluso cuando se repiten los trazos, se observa que al inicio de la trayectoria existe una línea atípica no programada, pero esto se debe a que cuando el marcador baja, se choca inicialmente contra el tablero y después se acomoda el gripper, por lo que este choque pequeño genera estos trazos que también se verán en otras figuras.
+
+#### Trayectoria iniciales
+
+Del mismo modo, los resultados para estos trazos son:
+
+<p align="center">
+  <img width="460" height="300" src="Imagenes/initdim.png">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="Imagenes/initdim2.png">
+</p>
+
+| Trazo | Valor real (mm) | Valor del dibujo (mm) |
+| ------------- | ------------- | ------------- |
+| Trazo 1: Letra N | 165  | ------------- |
+| Trazo 2: Letra N | 285  | ------------- |
+| Trazo 3: Letra N | 242.57  | ------------- |
+| Trazo 1: Letra G | 165  | ------------- |
+| Trazo 2: Letra G | 285  | ------------- |
+| Trazo 3: Letra G | 242.57  | ------------- |
+| Trazo 4: Letra G | 242.57  | ------------- |
+| Trazo 5: Letra G | 242.57  | ------------- |
+
+Se observa que la letra G la hace mejor que la letra N, aquí ocurre el mismo fenómeno, que el primer trazo debe corregir la trayectoria desde el punto de inicio, por lo que es el trazo más deficiente. Sin embargo, se logra corregir esto y la letra G se dibuja de una mejor manera. Otra cosa a atribuir es que el marcador pudo haberse movido un poco debido a la escritura o choques con el tablero, lo cual genera inexactitudes en los trazos dibujados.
+
+#### Trayectoria figura libre
+
+Ahora, para la figura libre se tiene:
+
+<p align="center">
+  <img width="460" height="300" src="Imagenes/digRes.png">
+</p>
+
+| Trazo | Valor real (mm) | Valor del dibujo (mm) |
+| ------------- | ------------- | ------------- |
+| Trazo 1: Ojo 1 | 165  | ------------- |
+| Trazo 2: Ojo 2 | 285  | ------------- |
+| Trazo 3: Radio boca | 242.57  | ------------- |
+| Trazo 1: Diámetro cara | 165  | ------------- |
 

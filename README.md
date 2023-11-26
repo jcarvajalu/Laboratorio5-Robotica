@@ -155,7 +155,7 @@ Se hicieron los trazos para la letra N y G, como adición, se aplicó una matriz
 
 <p align="center">
   <img width="460" height="300" src="Imagenes/iniciales.png">
-</p>
+</p> 
 
 ### Figura libre
 
@@ -165,9 +165,47 @@ Se programaron los trazos para dibujar una carita feliz, como los demás casos, 
   <img width="460" height="300" src="Imagenes/figurita.png">
 </p>
 
-## Envío de rutinas al robot con el script de Python y creación de la interfaz.
+## Envío de Rutinas al Robot con el Script de Python
 
-_________ Gay
+En esta sección, describimos el proceso de envío de rutinas al robot mediante un script en Python.
+
+### Carga de Posiciones de Trayectorias
+
+En primer lugar, se cargan las posiciones de cada una de las trayectorias por separado. Este enfoque se elige para lograr un control más efectivo de las velocidades de los trazos. Además, es esencial agregar las direcciones de estos archivos al archivo `CMakeLists.txt` para su integración adecuada.
+
+![Captura de pantalla - Carga de Posiciones](https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/a127e029-5e10-41a4-8398-a99e58d91cef)
+
+### Desarrollo de Funciones para Instrucciones
+
+Se desarrollan funciones específicas para la ejecución de cada instrucción. Estas funciones tienen en cuenta el estado de la herramienta, ya sea cargada o descargada, para permitir la continuación de las trayectorias. Durante la ejecución, se visualizan las posiciones del mecanismo, y al completar las trayectorias, se actualizan el tiempo de ejecución y la imagen correspondiente.
+
+![Captura de pantalla - Desarrollo de Funciones](https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/102cad38-7456-44f8-8e7f-05ec0824ccbd)
+
+Este procedimiento se repite para cada una de las instrucciones, asegurando un control detallado y preciso de las acciones del robot durante la ejecución de las rutinas.
+
+
+## Creación de la Interfaz
+
+La interfaz de usuario fue diseñada con la finalidad de proporcionar una experiencia intuitiva y eficiente para el control del sistema. Se implementaron seis botones clave, cada uno con una función específica:
+
+1. **Cargar Herramienta:** Permite cargar la herramienta de manera automatica.
+
+2. **Descargar Herramienta:** Permite descargar la herramienta de manera automatica.
+
+3. **Dibujar Espacio de Trabajo:** Inicia la creación y definición del espacio de trabajo para el robot.
+
+4. **Dibujar Iniciales:** Crea las iniciales de los dos participantes G y N.
+
+5. **Dibujar Figura:** Posibilita la creación de la figura seleccionada.
+
+6. **Botón de Parada de Emergencia:** Permite una detención inmediata del sistema en situaciones críticas.
+
+![Interfaz de Usuario](https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/b39a2da1-feb9-4f1a-88ad-8652c9350f7c)
+
+La disposición de la interfaz se presenta de manera organizada. En la parte superior, se muestran los nombres de los integrantes del equipo. El centro de la interfaz exhibe imágenes relevantes, con la imagen actual a la derecha y la imagen anterior a la izquierda. La información temporal de cada rutina, la posición actual del robot y el estado de la herramienta se presentan claramente a la derecha. En la parte inferior se encuentran los seis botones que permiten un control directo y rápido de las funciones esenciales.
+![Captura de pantalla de 2023-11-25 21-59-44](https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/48e2cd72-b6d2-4f05-b221-4114406a6df1)
+
+
 
 ## Resultados
 

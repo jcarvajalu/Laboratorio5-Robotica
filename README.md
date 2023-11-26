@@ -209,17 +209,24 @@ La disposición de la interfaz se presenta de manera organizada. En la parte sup
 
 ## Resultados
 
-Los resultados de esto se pueden ver en los 2 siguientes videos. El siguiente video muestra la implementación de todas las rutinas.
+Los resultados de esto se pueden ver en los siguientes videos. El siguiente video muestra la implementación de todas las rutinas.
 
 <p align="center">
-  <img width="460" height="300" src="Imagenes/WS.png">
+  <vid src="Videos/vid11.mp4">
 </p>
+<p align="center">
+  <vid src="Videos/vid12.mp4">
+</p>
+<p align="center">
+  <vid src="Videos/vid13.mp4">
+</p>
+
 Video 1
 
 Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video. Además, en este video se muestra una parte del análisis de repetitividad de trazos, donde se muestra el tablero ya con los trazos y la repetición de algunas rutinas. No se muestra todo el análisis puesto que el video quedaría muy extenso.
 
 <p align="center">
-  <img width="460" height="300" src="Imagenes/WS.png">
+  <vid src="Videos/vid2.mp4">
 </p>
 Video 2
 
@@ -237,11 +244,11 @@ Los tiempos de ejecución de cada rutina se resumen en la siguiente tabla.
 
 | Rutina | Tiempo (s) |
 | ------------- | ------------- |
-| Carga de herramienta  | Content Cell  |
-| Workspace  | Content Cell  |
-| Iniciales  | Content Cell  |
-| Figura libre  | Content Cell  |
-| Descargar herramienta  | Content Cell  |
+| Carga de herramienta  | 52 |
+| Workspace  | 75  |
+| Iniciales  |  110 |
+| Figura libre  |  55 |
+| Descargar herramienta  | 52  |
 
 ### Calidad del trazo y verificación dimensional de las figuras dibujadas
 

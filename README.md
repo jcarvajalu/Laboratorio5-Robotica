@@ -205,7 +205,14 @@ La interfaz de usuario fue diseñada con la finalidad de proporcionar una experi
 La disposición de la interfaz se presenta de manera organizada. En la parte superior, se muestran los nombres de los integrantes del equipo. El centro de la interfaz exhibe imágenes relevantes, con la imagen actual a la derecha y la imagen anterior a la izquierda. La información temporal de cada rutina, la posición actual del robot y el estado de la herramienta se presentan claramente a la derecha. En la parte inferior se encuentran los seis botones que permiten un control directo y rápido de las funciones esenciales.
 ![Captura de pantalla de 2023-11-25 21-59-44](https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/48e2cd72-b6d2-4f05-b221-4114406a6df1)
 
+Video de la interfaz
 
+
+https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/bc9d2299-45c1-4ac3-ae11-0f6e50d8b618
+
+
+Ver en mejor calidad.
+https://github.com/jcarvajalu/Laboratorio5-Robotica/blob/main/VideosC/py_int.mp4
 
 ## Resultados
 

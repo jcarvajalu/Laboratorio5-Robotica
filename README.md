@@ -218,11 +218,37 @@ https://github.com/jcarvajalu/Laboratorio5-Robotica/blob/main/VideosC/py_int.mp4
 
 Los resultados de esto se pueden ver en los siguientes videos. Dada la extensión del video, se divide en 3 partes.
 
+
+
+https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/9f88d37d-2bf2-40fd-a2f5-391a04a2ebac
+
+
+
 [Parte 1 de la demostración de las trayectorias](VideosC/video11.mp4)\\
+
+
+
+https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/514dc855-fb96-4322-9d55-24a621a2fd20
+
+
+
 [Parte 2 de la demostración de las trayectorias](VideosC/video12.mp4)\\
+
+
+
+https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/f4489581-ff74-4529-8819-355d201604ac
+
+
+
 [Parte 3 de la demostración de las trayectorias](VideosC/video13.mp4)
 
 Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video. Además, en este video se muestra una parte del análisis de repetitividad de trazos, donde se muestra el tablero ya con los trazos y la repetición de algunas rutinas. No se muestra todo el análisis puesto que el video quedaría muy extenso.
+
+
+
+https://github.com/jcarvajalu/Laboratorio5-Robotica/assets/82681128/5e4175cf-303d-4cc3-a282-9a0291bc30d3
+
+
 
 [Parte 2 de la demostración de la interfaz](VideosC/video2.mp4)
 

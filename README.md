@@ -209,26 +209,15 @@ La disposición de la interfaz se presenta de manera organizada. En la parte sup
 
 ## Resultados
 
-Los resultados de esto se pueden ver en los siguientes videos. El siguiente video muestra la implementación de todas las rutinas.
+Los resultados de esto se pueden ver en los siguientes videos. Dada la extensión del video, se divide en 3 partes.
 
-<p align="center">
-  <vid src="Videos/vid11.mp4">
-</p>
-<p align="center">
-  <vid src="Videos/vid12.mp4">
-</p>
-<p align="center">
-  <vid src="Videos/vid13.mp4">
-</p>
-
-Video 1
+[Parte 1 de la demostración de las trayectorias](VideosC/video11.mp4)
+[Parte 2 de la demostración de las trayectorias](VideosC/video12.mp4)
+[Parte 3 de la demostración de las trayectorias](VideosC/video13.mp4)
 
 Dado que se pasó por alto algunos requerimientos de la interfaz gráfica, se modificó la interfaz que ya se tenía implementada ajustando estos requerimientos, la interfaz implementada completa se muestra en el siguiente video. Además, en este video se muestra una parte del análisis de repetitividad de trazos, donde se muestra el tablero ya con los trazos y la repetición de algunas rutinas. No se muestra todo el análisis puesto que el video quedaría muy extenso.
 
-<p align="center">
-  <vid src="Videos/vid2.mp4">
-</p>
-Video 2
+[Parte 2 de la demostración de la interfaz](VideosC/video2.mp4)
 
 Se observa que se implementaron todos los requerimientos en la interfaz gráfica y se realiza la secuencia de rutinas solicitada. El resultado de los trazos repetidos se muestra en la siguiente imagen. Se hizo una corrección de perspectiva dado que la superficie del tablero debe quedar lo más perpendicular a la cámara para que se tengan los resultados más reales.
 
